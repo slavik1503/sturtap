@@ -39,8 +39,8 @@ function tripleClick(event) {
 document.addEventListener("scroll", function(){
   bgHeader.style.backgroundSize = (120 + (window.pageYOffset / 5) + "%") + "auto"
   bgHeader.style.transition = "all 1.5s ease"
-  bgDoYouLike.style.backgroundSize = (150 + ((window.pageYOffset - bgDoYouLike.getBoundingClientRect().y) / 5) + "%") + "auto"
-  bgDoYouLike.style.transition = "all 1.5s ease"
+  // bgDoYouLike.style.backgroundSize = (150 + ((window.pageYOffset + bgDoYouLike.getBoundingClientRect().y) / 5) + "%") + "auto"
+  // bgDoYouLike.style.transition = "all 1.5s ease"
 } )
 
 // Попап авторизації
