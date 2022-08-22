@@ -5,6 +5,8 @@ let bgHeader = document.querySelector(".header-backround"),
     activePopupForm = document.querySelector(".popup-form"),
     activeFirstPopup,
     activeSecondPopup,
+    firstPopup = document.querySelector(".first-popup"),
+    firstPopupMenu = document.querySelector(".first-popup-menu"),
     photoFirst = document.querySelector(".photo-first"),
     photoSecond = document.querySelector(".photo-second"),
     photoThird = document.querySelector(".photo-third"),
@@ -51,16 +53,10 @@ function popupOpen() {
 }
 
 function firstPopupOpen() {
-  firstPopupMenu.style.display = "block",
-  popupRegister.classList.add("active-first-popup"), 
-  activePopup = document.querySelector(".active-popup"), 
-  activePopup.onclick = checkClick
-}
-
-function secondPopupOpen() {
-  secondPopupMenu.style.display = "block",
-  popupRegister.classList.add("active-popup"), 
-  activePopup = document.querySelector(".active-popup"), 
+  firstPopupMenu.style.display = "block"
+  popupRegister.classList.add("active-first-popup")
+  activePopup = document.querySelector(".active-popup")
+  activePopupForm.style.zIndex = "12"
   activePopup.onclick = checkClick
 }
 function popupClose(){
@@ -70,67 +66,67 @@ function popupClose(){
 }
 // Фільтр картинок
 function allOpen() {
-  photoFirst.style.display = "block",
-  photoSecond.style.display = "block",
-  photoThird.style.display = "block",
-  photoFouth.style.display = "block",
-  photoFifth.style.display = "block",
-  photoSixth.style.display = "block",
-  photoSeventh.style.display = "block",
-  photoEighth.style.display = "block",
-  photoNinth.style.display = "block",
+  photoFirst.style.display = "block"
+  photoSecond.style.display = "block"
+  photoThird.style.display = "block"
+  photoFouth.style.display = "block"
+  photoFifth.style.display = "block"
+  photoSixth.style.display = "block"
+  photoSeventh.style.display = "block"
+  photoEighth.style.display = "block"
+  photoNinth.style.display = "block"
   localStorage.setItem("PInfo", "All")
 }
 
 function brandingOpen() {
-  photoFirst.style.display = "block",
-  photoSecond.style.display = "block",
-  photoThird.style.display = "block",
-  photoFouth.style.display = "none",
-  photoFifth.style.display = "none",
-  photoSixth.style.display = "none",
-  photoSeventh.style.display = "none",
-  photoEighth.style.display = "none",
-  photoNinth.style.display = "none",
+  photoFirst.style.display = "block"
+  photoSecond.style.display = "block"
+  photoThird.style.display = "block"
+  photoFouth.style.display = "none"
+  photoFifth.style.display = "none"
+  photoSixth.style.display = "none"
+  photoSeventh.style.display = "none"
+  photoEighth.style.display = "none"
+  photoNinth.style.display = "none"
   localStorage.setItem("PInfo", "branding")
 }
 
 function designOpen() {
-  photoFouth.style.display = "block",
-  photoFifth.style.display = "block",
-  photoSixth.style.display = "block",
-  photoFirst.style.display = "none",
-  photoSecond.style.display = "none",
-  photoThird.style.display = "none",
-  photoSeventh.style.display = "none",
-  photoEighth.style.display = "none",
-  photoNinth.style.display = "none",
+  photoFouth.style.display = "block"
+  photoFifth.style.display = "block"
+  photoSixth.style.display = "block"
+  photoFirst.style.display = "none"
+  photoSecond.style.display = "none"
+  photoThird.style.display = "none"
+  photoSeventh.style.display = "none"
+  photoEighth.style.display = "none"
+  photoNinth.style.display = "none"
   localStorage.setItem("PInfo", "design")
 }
 
 function developmentOpen() {
-  photoSeventh.style.display = "block",
-  photoEighth.style.display = "block",
-  photoNinth.style.display = "block",
-  photoFirst.style.display = "none",
-  photoSecond.style.display = "none",
-  photoThird.style.display = "none",
-  photoFouth.style.display = "none",
-  photoFifth.style.display = "none",
-  photoSixth.style.display = "none",
+  photoSeventh.style.display = "block"
+  photoEighth.style.display = "block"
+  photoNinth.style.display = "block"
+  photoFirst.style.display = "none"
+  photoSecond.style.display = "none"
+  photoThird.style.display = "none"
+  photoFouth.style.display = "none"
+  photoFifth.style.display = "none"
+  photoSixth.style.display = "none"
   localStorage.setItem("PInfo", "development")
 }
 
 function strategyOpen() {
-  photoThird.style.display = "block",
-  photoFifth.style.display = "block",
-  photoSixth.style.display = "block",
-  photoFirst.style.display = "none",
-  photoSecond.style.display = "none",
-  photoFouth.style.display = "none",
-  photoSeventh.style.display = "none",
-  photoEighth.style.display = "none",
-  photoNinth.style.display = "none",
+  photoThird.style.display = "block"
+  photoFifth.style.display = "block"
+  photoSixth.style.display = "block"
+  photoFirst.style.display = "none"
+  photoSecond.style.display = "none"
+  photoFouth.style.display = "none"
+  photoSeventh.style.display = "none"
+  photoEighth.style.display = "none"
+  photoNinth.style.display = "none"
   localStorage.setItem("PInfo", "strategy")
 }
 
