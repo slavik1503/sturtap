@@ -63,15 +63,11 @@ function secondPopupOpen() {
   activePopup = document.querySelector(".active-popup"), 
   activePopup.onclick = checkClick
 }
-
-function popupLoadOpen() {
-  popupLoad.style.display = "block",
-  popupLoad.classList.add("active-popup"), 
-  activePopup = document.querySelector(".active-popup"),
-
-  activePopup.onclick = checkClick
+function popupClose(){
+  popupRegister.style.display = "none"
+  popupRegister.classList.remove("active-popup")
+  activePopupForm.style.zIndex = "-1"
 }
-
 // Фільтр картинок
 function allOpen() {
   photoFirst.style.display = "block",
@@ -167,15 +163,15 @@ function scrollWorks(){
 }
 
 function scrollBlog(){
-  window.scrollTo(0, (window.pageYOffset + 4120))
+  window.scrollTo(0, (window.pageYOffset + 4820))
 }
 
 function scrollClients(){
-  window.scrollTo(0, (window.pageYOffset + 5305))
+  window.scrollTo(0, (window.pageYOffset + 6005))
 }
 
 function scrollContact(){
-  window.scrollTo(0, (window.pageYOffset + 5980))
+  window.scrollTo(0, (window.pageYOffset + 6680))
 }
 function scrollGetInTouch(){
   window.scrollTo(0, (window.pageYOffset + 2480))
