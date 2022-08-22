@@ -1,0 +1,655 @@
+@import components/vars
+@import components/mixins
+
+.slides 
+  display: flex
+  position: relative
+  top: 0
+  left: 0
+  width: 10000px
+
+.slides.shifting 
+  transition: left .2s ease-out
+
+
+.slide 
+  cursor: pointer
+  display: flex
+  flex-direction: column
+  justify-content: center
+  transition: all 1s
+  position: relative
+  border-radius: 2px
+
+.popup-register,
+.first-popup,
+.second-popup,
+.popup-load
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 11
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, .7)
+.popup-form,
+.popup-form-load
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: 45%
+  padding: 3%
+  box-sizing: border-box
+  text-align: center
+  background-color: #fff
+  border-radius: 30px
+  max-height: 80vh
+  scrollbar-width: none
+  z-index: -1
+
+.popup-form .register-submit+label
+  width: 0
+  padding: 0
+
+.popup-form p:last-child
+  margin-bottom: 0
+  padding-top: 10px
+
+.slider.loaded 
+  .slide:nth-child(2),
+  .slide:nth-child(7) 
+  .slide:nth-child(1),
+  .slide:nth-child(6) 
+  .slide:nth-child(3) 
+  .slide:nth-child(4) 
+  .slide:nth-child(5) 
+
+
+.control 
+  position: absolute
+  top: 50%
+  width: 50px
+  height: 50px
+  background: #fff
+  border-radius: 50px
+  margin-top: -20px
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3)
+  z-index: 2
+
+
+.prev,
+.next 
+  background-size: 22px
+  background-position: center
+  background-repeat: no-repeat
+  cursor: pointer
+
+
+.prev 
+  background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png)
+  left: -20px
+
+
+.next 
+  background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png)
+  right: -20px
+
+
+.prev:active,
+.next:active 
+  transform: scale(.8)
+
+body
+    margin: 0
+    font-family: Arial, Helvetica, sans-serif
+.wrapper
+    width: 1140px
+    margin: 0 auto
+.header-backround
+    position: absolute
+    padding-top: 30px
+    width: 100%
+    margin-bottom: 100px
+    transform: translateY()
+    background: url("../img/header-top.jpg") center/cover
+.header
+    padding-bottom: 365px
+.logo
+    color: $white
+    font-weight: bold
+    font-size: 24px
+    margin: 0
+    display: inline-block
+    font-family: "Maven Pro"
+
+.header-menu
+    list-style: none
+    float: right
+    display: inline-block
+.header-menu li
+    padding: 10px
+    display: inline-block
+.header-menu li a
+    padding: 7px
+    margin-top: 10px
+    position: relative
+    +link
+    &:hover:before
+        content: ""
+        position: absolute
+        top: 40px
+        left: 0
+        width: 100%
+        height: 2px
+        background-color: #fff
+.header-h1
+    color: $white
+    font-weight: 500
+    font-size: 48px
+    padding-top: 250px
+    text-align: center
+    font-family: "Maven Pro"
+.header-text
+    color: $white
+    text-align: center
+    font-size: 20px
+.a-block
+    padding-top: 20px
+    text-align: center
+    display: block
+.popup
+    content: ""
+    position: absolute
+    top: 200px
+    left: 330px
+    visibility: hidden
+    border: 2px solid $red
+    border-radius: 3px
+    padding: 320px 150px 80px
+    background-color: $white
+.sing
+    color: $red
+    padding: 15px 55px
+    font-weight: 700
+    text-decoration: none
+    border: 2px solid $red
+    border-radius: 2px
+    transition: all .3s ease
+    &:hover
+        color: $white
+        background-color: $red
+.red-block
+    content: ""
+    position: absolute
+    width: 100px
+    height: 50px
+    left: 20px
+    top: 100px
+    cursor: all-scroll
+    background-color: $red
+.red-finish
+    content: ""
+    position: absolute
+    width: 100px
+    height: 50px
+    left: 240px
+    top: 200px
+    border: 1px solid $red
+.green-block
+    content: ""
+    position: absolute
+    width: 100px
+    height: 50px
+    left: 130px
+    top: 100px
+    cursor: all-scroll
+    background-color: green
+.green-finish
+    content: ""
+    position: absolute
+    width: 100px
+    height: 50px
+    left: 350px
+    top: 200px
+    border: 1px solid green
+.blue-block
+    content: ""
+    position: absolute
+    width: 100px
+    height: 50px
+    left: 240px
+    top: 100px
+    cursor: all-scroll
+    background-color: blue
+.blue-finish
+    content: ""
+    position: absolute
+    width: 100px
+    height: 50px
+    left: 20px
+    top: 200px
+    border: 1px solid blue
+.yellow-block
+    content: ""
+    position: absolute
+    width: 100px
+    height: 50px
+    left: 350px
+    top: 100px
+    cursor: all-scroll
+    background-color: yellow
+.yellow-finish
+    content: ""
+    position: absolute
+    width: 100px
+    height: 50px
+    left: 130px
+    top: 200px
+    border: 1px solid yellow
+.hide
+    display: none
+.hovered
+    background-color: lightgrey
+.end-styles
+    top: 0
+    left: 0
+.cross
+    color: $red
+    font-size: 55px
+    top: -8px
+    right: 10px
+    text-decoration: none
+    transform: rotate(45deg)
+    position: absolute
+.header-link
+    border: 2px solid $white
+    border-radius: 2px
+    padding: 14px 25px
+    transition: all .3s ease
+    +link
+    &:hover
+        color: $red
+        background-color: $white
+.main
+    padding: 1000px 0 0
+.main-h1
+    font-size: 23px
+    font-weight: 600
+    position: relative
+    padding-bottom: 50px
+    +h
+    &::before
+        +stick
+.main-text
+    padding-bottom: 70px
+    text-align: center
+    +text
+.main-cards-block
+    display: flex
+    padding-bottom: 250px
+    justify-content: space-between
+.images
+    text-align: center
+figure
+    position: relative
+.card-h2
+    font-size: 15px
+    font-weight: 600
+    +h
+.card-desc
+    font-size: 16px
+    text-align: center
+    +text
+figure
+    margin: 0
+.card1
+    text-align: center
+.a
+    display: inline-block
+    background-image: url(../img/sprite.jpg)
+    transition: all 0.5s ease
+    width: 90px
+    height: 90px
+    background-position: 0 -95px
+    &:hover
+        background-position: 0 0
+        
+.card2
+    text-align: center
+.slash
+    display: inline-block
+    background-image: url(../img/sprite.jpg)
+    transition: all 0.7s ease
+    width: 90px
+    height: 90px
+    background-position: 184px -95px
+    &:hover
+        background-position: 184px 0
+.card3
+    text-align: center
+.circle
+    display: inline-block
+    background-image: url(../img/sprite.jpg)
+    transition: all 0.7s ease
+    width: 90px
+    height: 90px
+    background-position: 90px -95px
+    &:hover
+        background-position: 90px 0
+.people-h1
+    font-size: 23px
+    font-weight: 600
+    padding-bottom: 45px
+    position: relative
+    +h
+    &::before
+        +stick
+.main-left-text-block
+    padding-right: 10px
+    padding-bottom: 100px
+    display: inline-block
+.main-right-text-block
+    padding-left: 17px
+    padding-bottom: 100px
+    display: inline-block
+.main-desc
+    font-size: 15px
+    +text
+.people
+    display: flex
+    position: relative
+    padding-bottom: 200px
+    justify-content: space-between
+.left-arrow-block
+    content: ""
+    position: absolute
+    width: 35px
+    height: 38px
+    top: 105px
+    left: 0
+    border-radius: 2px
+    transition: all .5s ease
+    background-color: #c2c2c2
+    &:hover
+        background-color: $red
+.left-arrow
+    padding: 12px
+.right-arrow-block
+    content: ""
+    position: absolute
+    width: 35px
+    height: 38px
+    top: 105px
+    right: 0
+    border-radius: 2px
+    transition: all .5s ease
+    background-color: #c2c2c2
+    &:hover
+        background-color: $red
+.right-arrow
+    padding: 13px
+.man-figure
+    margin: 0
+.people-h3
+    font-weight: 500
+    +h
+.people-text
+    font-weight: bold
+    text-align: center
+    +text
+.works
+    padding-bottom: 200px
+.radio+label
+    padding: 0 30px
+    &:hover
+        cursor: pointer
+.radio:checked+label
+    color: $red
+.works-h1
+    font-size: 23px
+    font-weight: 500
+    padding-bottom: 50px
+    position: relative
+    +h
+    &:before
+        +stick
+.photos
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -10px
+
+.form1
+    text-align: center
+    padding-bottom: 50px
+.photo
+    position: relative
+    color: #fff
+    line-height: 1.6rem
+    width: 31%
+    margin: 0 10px 30px
+        
+.photo img
+    width: 100%
+    height: 100%
+
+.photo-hover
+    opacity: 0
+    position: absolute
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(192, 48, 28, .7)
+    transition: all .3s ease
+
+
+.photo-hover:hover 
+    opacity: 1
+
+.photo-hover .button 
+    position: relative
+    min-width: 10px
+    padding: 14px 40px 14px 20px
+
+.photo-hover .button:hover:before 
+    border-color: #c0301c
+
+.photo-hover .button::before
+    content: ''
+    position: absolute
+    top: calc(50% - 5px)
+    right: 20px
+    width: 8px
+    height: 8px
+    border: 1px solid $white
+    border-left: none
+    border-bottom: none
+    transform: rotate(45deg)
+    transition: all .5s ease
+
+.button
+    color: $white
+    text-decoration: none
+.button:hover 
+    color: $red
+    background-color: $white
+
+.main-backround
+    padding: 160px 0
+    text-align: center
+    margin-bottom: 150px
+    background: url("../img/main-backround.jpg") center/cover
+.middle-h1
+    color: $white
+    font-size: 38px
+    font-weight: 400
+    text-align: center
+    font-family: "Roboto Slab"
+.margin
+    padding-bottom: 40px
+.get-in-touch
+    color: $white
+    font-size: 23px
+    font-weight: 400
+    margin-top: 20px
+    border-radius: 2px
+    padding: 15px 25px
+    margin-top: 30px
+    text-decoration: none
+    border: 2px solid $white
+    font-family: "Roboto Slab"
+    transition: all .3s ease
+    &:hover
+        background-color: $red
+.startup-block
+    display: flex
+    justify-content: space-between
+.interface-block
+    display: flex
+    padding-bottom: 200px
+    justify-content: space-between
+.page
+    display: inline-block
+.desc
+    display: inline-block
+.date
+    width: 76px
+    text-align: center
+    display: inline-block
+    background-color: #f8f8f8
+    border: 2px solid $grey
+.date-text
+    color: $grey
+    font-size: 18px
+    margin: 10px 0 10px
+    font-weight: bold
+.h
+    padding-left: 30px
+    display: inline-block
+.blog-h2
+    font-size: 16px
+    color: #c0301c
+    font-weight: 400
+    text-align: center
+    font-family: "Montserrat"
+.mini-desc
+    color: $grey
+.more
+    font-size: 13px
+    letter-spacing: 1px
+    color: $grey
+    font-weight: bold
+    text-align: center
+    text-decoration: none
+    font-family: "Roboto Slab"
+    &:hover
+        color: #c0301c
+.line
+    width: 100%
+    height: 1px
+    margin: 100px 0
+    background-color: #ddd
+.brands
+    display: flex
+    justify-content: space-between
+    padding-bottom: 100px
+.quotes
+    text-align: center
+    padding-bottom: 200px
+.get-in-touch-block
+    display: flex
+    padding-bottom: 120px
+.info
+    padding-right: 150px
+.address
+    color: $grey
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        width: 12px
+        height: 17px
+        top: -2px
+        left: -35px
+        background: url("../img/adress.jpeg") center/cover
+.reg-desc
+    color: $grey
+    font-size: 14px
+    margin: 0 0 5px
+.hotline
+    color: $grey
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        width: 12px
+        height: 20px
+        top: -2px
+        left: -35px
+        background: url("../img/phone.jpeg") center/cover
+.email
+    color: $grey
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        width: 15px
+        height: 11px
+        top: 2px
+        left: -35px
+        background: url("../img/email.jpeg") center/cover
+.form
+    padding-bottom: 150px
+.form-text
+    display: inline-block
+    +text
+.footer-backround
+    position: relative
+    text-align: center
+    padding: 170px 0 80px
+    background-color: $red
+.icons
+    padding-bottom: 40px
+    &::before
+        content: ""
+        width: 50px
+        height: 2px
+        top: 235px
+        left: 735px
+        position: absolute
+        background-color: $white
+.ico
+    padding: 0 10px
+.c
+    color: $white
+.mr
+    margin-right: 30px
+input
+    margin: 0 0 30px 0
+    outline: none
+    padding: 15px 200px 15px 10px
+    &:focus
+        border: 1px solid $red
+        filter: drop-shadow(0 0 2.5px rgba(62,106,255,0.55))
+        background-color: $white
+.textarea
+    width: 790px
+    outline: none
+    padding-top: 10px
+    margin-bottom: 30px
+    &:focus
+        border: 1px solid $red
+        filter: drop-shadow(0 0 2.5px rgba(62,106,255,0.55))
+        background-color: $white
+.submit
+    outline: none
+    border: 1px solid $grey
+    text-align: center
+    padding: 15px 50px
+    background-color: $white
